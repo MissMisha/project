@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+
+    function doLogout()
+    {
+      localStorage.removeItem("activeUser")
+      location.href="/index.html";
+    }
+  </script>
+  <script>
+    $(document).ready(function(){
+      let active=localStorage.getItem("activeUser");
+      $("#wlcm").html(active);
+    })
+  </script>
+</head>
+<body >
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+  <!-- navbar -->
+
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" sticky-top >
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-text">
+            <i class="fa-brands fa-docker" style="color: #B197FC;font-size:40px;float:left"></i> 
+            <div style="float:left;margin-left:10px;">
+                <h2>  Client Dashboard</h2>
+
+            </div>
+         </span>
+        </div>
+
+       </nav>
+<div>
+
+  <a href="/index.html" >
+
+    <div  style="float:left;font-size:25px;margin-left:20px;margin-right:30px;color:white">Home </div>
+   <!-- <i class="fa-solid fa-house" style="color: #B197FC;font-size:30px;"></i> -->
+ 
+</a>
+  <button type="button" onclick="doLogout()" class="btn btn-outline-light " style="float:left;font-size:20px;margin-right: 20px;;">
+    Logout
+    <i class="fa-solid fa-right-from-bracket" style="color: #B197FC;font-size:30px;margin-left: 5px;;"></i>
+  </button>
+  
+  
+</div>
+<div style="color:grey;margin-right: 1000px;margin-left: 20px;font-size: 30px;">
+  Welcome!!   <span id="wlcm" style="font-size:20px;;color:grey"></span>
+    </div>
+      </nav>
+
+    <div class="card" style="width: 18rem;margin-left:300px;margin-top:30px;float:left">
+      <div style="background-image: url(pics/profilepurple.jpeg);width:285px;height:240px;background-size: contain;background-repeat: no-repeat;"></div>
+        <div class="card-body"style="">
+          <h5 class="card-title">Profile</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="/client-profile.html" class="btn btn-dark">Go to Profile</a>
+        </div>
+      </div>
+
+      <!----------------------------------->
+      <div class="card" style="width: 18rem;margin-left:100px;margin-top:30px;float:left">
+        <div style="background-image: url(pics/search.jpg);width:285px;height:240px;background-size:cover;"></div>
+
+        <div class="card-body"style="">
+          <h5 class="card-title">Search Influencer</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="infl-finder.html" class="btn btn-dark">Search</a>
+        </div>
+      </div>
+</body>
+</html>
