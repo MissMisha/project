@@ -82,6 +82,25 @@
         $scope.fullDetailsAry = $scope.jsonDetailsAry[index];
         // alert(index);
       }
+      let active=localStorage.getItem("activeUser");
+      $("#sndmail").click(function () {
+                //alert("clicked");
+                let obj = {
+                    type: "get",
+                    url: "/send-mail",
+                    data: {
+                        mail: active
+                    }
+                }
+                $.ajax(obj).done(function (resp) {
+                   // alert(resp);
+
+
+                }).fail(function (err) {
+                    alert(err.statusText);
+                })
+
+            })
 
     })
   </script>
@@ -219,11 +238,8 @@
                 <h3>{{fullDetailsAry.iname}}</h3>
                 <h5>{{fullDetailsAry.field}}</h5>
                 <br>
-                <button type="button" class="btn btn-outline-primary">
-                  <a  style="text-decoration: none;"
-                    href="https://api.whatsapp.com/send?phone=+91{{fullDetailsAry.contact}}+&text=Hi +{{fulldetailsAry.iname}}, We would like to collaborate with you">
-                    Contact
-                  </a>
+                <button type="button" class="btn btn-outline-primary" id="sndmail">
+                 Contact
                 </button>
               </div>
 
