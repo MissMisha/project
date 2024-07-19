@@ -283,7 +283,7 @@
     <div style="width:inherit;height:500px;background-color:black;padding:30px;">
 
         <div class="card col-md-6" style="width: 18rem;float:left">
-            <img class="card-img-top" src="pics/rajeshbansal.jpg" alt="Card image cap">
+           <div style="background-image: url(pics/rajeshbansal.jpg);height:50px;width:50px;background-image: contain;"></div>
             <div class="card-body">
               <h5 class="card-title">Under The guidance of</h5>
               <p class="card-text">Rajesh Kumar Bansal <br> Author of Real Java</p>
@@ -296,7 +296,7 @@
 
 
         <div class="card col-md-6" style="width: 18rem;float:left">
-            <img class="card-img-top" src="pics/misha.jpg" alt="Card image cap">
+            <div style="background-image: url(pics/misha.jpg);"></div>
             <div class="card-body">
               <h5 class="card-title">Developed By</h5>
               <p class="card-text">Misha Bansal<br>Student</p>
@@ -319,10 +319,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Signup here <div style=" color:#B197FC"> <span
+                    <h5 class="modal-title " id="exampleModalLabel">Signup here <div style=" color:#B197FC"> <span
                                 id="msgSignup">*</span></div>
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
 
