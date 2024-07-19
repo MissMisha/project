@@ -17,9 +17,11 @@ const nodemailer = require("nodemailer");
 let config={
     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
     user:"ukjzbpsazswmgigw",
-    password:"TtMBZ0ju0dNqnDpVhTJN",
+    password:"TAOd9fEbwTevak4Ptdab",
     database:"bmlc6icip0yqey6mufco",
-    dateStrings:true
+    dateStrings:true,
+    keepAliveInitialDelay : 10000,
+    enableKeepAlive : true,
 }
 
 app.use(express.urlencoded("true"));

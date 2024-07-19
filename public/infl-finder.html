@@ -21,12 +21,13 @@
     var module = angular.module("myModule", []);
     var controller = module.controller("myController", function ($scope, $http) {
 
-
+      alert("Hola")
 
       $scope.jsonsomecityArray;
       $scope.showsomecities = function()
        {
-         alert($scope.selField);
+        //  alert($scope.selField);
+        
         let url = "/show-some-cities?field=" + $scope.selField;
 
         $http.get(url).then(ok, notOk);
@@ -83,25 +84,25 @@
         $scope.fullDetailsAry = $scope.jsonDetailsAry[index];
         // alert(index);
       }
-      let active=localStorage.getItem("activeUser");
-      $("#sndmail").click(function () {
-                //alert("clicked");
-                let obj = {
-                    type: "get",
-                    url: "/send-mail",
-                    data: {
-                        mail: active
-                    }
-                }
-                $.ajax(obj).done(function (resp) {
-                   // alert(resp);
+      // let active=localStorage.getItem("activeUser");
+      // $("#sndmail").click(function () {
+            //     //alert("clicked");
+            //     let obj = {
+            //         type: "get",
+            //         url: "/send-mail",
+            //         data: {
+            //             mail: active
+            //         }
+            //     }
+            //     $.ajax(obj).done(function (resp) {
+            //        // alert(resp);
 
 
-                }).fail(function (err) {
-                    alert(err.statusText);
-                })
+            //     }).fail(function (err) {
+            //         alert(err.statusText);
+            //     })
 
-            })
+            // })
 
     })
   </script>
@@ -145,8 +146,7 @@
 
   <div class="container" style="margin-top:50px;margin-left:200px;">
     <div style="float: left;margin-left:50px;width:200px;">
-      <select class="form-select" aria-label="Default select example" ng-model="selField"
-        ng-change="showsomecities();">
+      <select class="form-select" aria-label="Default select example" ng-model="selField" ng-change="showsomecities();">
         <option value=""> Select Field</option>
         <option value="Music">Music</option>
         <option value="Dance">Dance</option>
@@ -239,9 +239,9 @@
                 <h3>{{fullDetailsAry.iname}}</h3>
                 <h5>{{fullDetailsAry.field}}</h5>
                 <br>
-                <button type="button" class="btn btn-outline-primary" id="sndmail">
+                <a href="https://wa.me/{{fullDetailsAry.contact}}/?text=urlencodedtext" class="btn btn-outline-primary" id="sndmail">
                  Contact
-                </button>
+                </a>
               </div>
 
             </div>
