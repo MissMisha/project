@@ -327,27 +327,28 @@
                 <div class="modal-body">
 
                     <form>
-                        <div class="mb-3">
+                        <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" id="txtEmail" name="txtEmail" class="form-control"
-                                id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[^ @]*@[^ @]*">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[^ @]*@[^ @]*" placeholder="enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" >Password</label>
                             <input type="password" id="pwd" name="pwd" class="form-control" id="exampleInputPassword1">
                         </div>
                         <!-- <div class="mb-3 form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div> -->
-
-                        <select class="form-select" aria-label="Default select example" id="combo" name="combo">
+                        <div class="form-group">
+                        <select class="form-control" id="combo" name="combo">
                             <option selected>Select your category</option>
                             <option value="Client">Client</option>
                             <option value="Influencer" name="infl" id="infl">Influencer</option>
 
                         </select>
+                        </div>
                         <br>
 
                     </form>
