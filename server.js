@@ -492,7 +492,7 @@ app.get("/show-some-cities",function(req,resp){
         {
 
             resp.send(jsonsomecityArray);
-           // console.log(JSON.stringify(jsonsomecityArray));
+            console.log(JSON.stringify(jsonsomecityArray));
         }
 
     })

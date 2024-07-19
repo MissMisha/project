@@ -24,14 +24,15 @@
 
 
       $scope.jsonsomecityArray;
-      $scope.showsomecities = function () {
-        //  alert($scope.selField);
+      $scope.showsomecities = function()
+       {
+         alert($scope.selField);
         let url = "/show-some-cities?field=" + $scope.selField;
 
         $http.get(url).then(ok, notOk);
 
         function ok(response) {
-          //alert (JSON.stringify(response.data));
+          alert (JSON.stringify(response.data));
           $scope.jsonsomecityArray = response.data;
 
         }
@@ -160,7 +161,7 @@
       </select>
     </div>
     <div style="float: left;margin-left:50px; width:200px;">
-      <select class="form-select" aria-label="Default select example" ng-init="selCity=none" ng-model="selCity">
+      <select class="form-select" aria-label="Default select example"  ng-model="selCity">
         <option value="">Select City</option>
         <option ng-repeat="obj in jsonsomecityArray" value="{{obj.city}}">{{obj.city}}</option>
 
