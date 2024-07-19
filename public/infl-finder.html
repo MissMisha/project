@@ -31,7 +31,7 @@
         $http.get(url).then(ok, notOk);
 
         function ok(response) {
-          alert (JSON.stringify(response.data));
+        //  alert (JSON.stringify(response.data));
           $scope.jsonsomecityArray = response.data;
 
         }
@@ -67,7 +67,7 @@
         $http.get(url).then(ok, notOk);
 
         function ok(response) {
-          alert(JSON.stringify(response.data));
+          //alert(JSON.stringify(response.data));
           $scope.jsonDetailsAry = response.data;
 
         }
@@ -237,7 +237,7 @@
                 <h3>{{fullDetailsAry.iname}}</h3>
                 <h5>{{fullDetailsAry.field}}</h5>
                 <br>
-                <a href="https://wa.me/{{fullDetailsAry.contact}}/?text=urlencodedtext" class="btn btn-outline-primary" id="sndmail">
+                <a href="https://wa.me/{{fullDetailsAry.contact}}/?text=Heloo%20{{fullDetailsAry.iname}}" class="btn btn-outline-primary" id="sndmail">
                  Contact
                 </a>
               </div>
