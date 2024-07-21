@@ -6,23 +6,23 @@ const http = require("http");
 const nodemailer = require("nodemailer");
 
 
-let config={
-    host:"127.0.0.1",
-    user:"root",
-    password:"Admin123",
-    database:"project",
-    dateStrings:true
-}
-
 // let config={
-//     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
-//     user:"ukjzbpsazswmgigw",
-//     password:"TAOd9fEbwTevak4Ptdab",
-//     database:"bmlc6icip0yqey6mufco",
-//     dateStrings:true,
-//     keepAliveInitialDelay : 10000,
-//     enableKeepAlive : true,
+//     host:"127.0.0.1",
+//     user:"root",
+//     password:"Admin123",
+//     database:"project",
+//     dateStrings:true
 // }
+
+let config={
+    host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
+    user:"ukjzbpsazswmgigw",
+    password:"TAOd9fEbwTevak4Ptdab",
+    database:"bmlc6icip0yqey6mufco",
+    dateStrings:true,
+    keepAliveInitialDelay : 10000,
+    enableKeepAlive : true,
+}
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
