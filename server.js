@@ -1,18 +1,18 @@
-var express=require("express");
-let app= express();
-let mysql2=require("mysql2");
-let fileuploader=require("express-fileupload");
-const http = require("http");
-const nodemailer = require("nodemailer");
+// var express=require("express");
+// let app= express();
+// let mysql2=require("mysql2");
+// let fileuploader=require("express-fileupload");
+// const http = require("http");
+// const nodemailer = require("nodemailer");
 
 
-// let config={
-//     host:"127.0.0.1",
-//     user:"root",
-//     password:"Admin123",
-//     database:"project",
-//     dateStrings:true
-// }
+let config={
+    host:"127.0.0.1",
+    user:"root",
+    password:"Admin123",
+    database:"project",
+    dateStrings:true
+}
 
 let config={
     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
