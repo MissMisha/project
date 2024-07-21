@@ -1,9 +1,9 @@
-// var express=require("express");
-// let app= express();
-// let mysql2=require("mysql2");
-// let fileuploader=require("express-fileupload");
-// const http = require("http");
-// const nodemailer = require("nodemailer");
+var express=require("express");
+let app= express();
+let mysql2=require("mysql2");
+let fileuploader=require("express-fileupload");
+const http = require("http");
+const nodemailer = require("nodemailer");
 
 
 let config={
@@ -14,15 +14,15 @@ let config={
     dateStrings:true
 }
 
-let config={
-    host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
-    user:"ukjzbpsazswmgigw",
-    password:"TAOd9fEbwTevak4Ptdab",
-    database:"bmlc6icip0yqey6mufco",
-    dateStrings:true,
-    keepAliveInitialDelay : 10000,
-    enableKeepAlive : true,
-}
+// let config={
+//     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
+//     user:"ukjzbpsazswmgigw",
+//     password:"TAOd9fEbwTevak4Ptdab",
+//     database:"bmlc6icip0yqey6mufco",
+//     dateStrings:true,
+//     keepAliveInitialDelay : 10000,
+//     enableKeepAlive : true,
+// }
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
