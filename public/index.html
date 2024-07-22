@@ -137,42 +137,41 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"    />
 
-    <nav class="navbar bg-dark border-bottom border-body sticky-top" data-bs-theme="dark">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <span class="navbar-text">
-                    <i class="fa-brands fa-docker" style="color: #B197FC;font-size:40px;float:left"></i>
-                    <div style="float:left;margin-left:10px;color: white;">
-                        <h2> Befluencer</h2>
 
-                    </div>
-                </span>
-            </div>
+     <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
+    <i class="fa-brands fa-docker" style="color: #B197FC;font-size:45px;margin-right:1%"></i>
+    <a class="navbar-brand" href="#"><h3>Find Influencer</h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-right ">
+          <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-right  ">
+          <a class="nav-link" href="#service">Our Services <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-right ">
+            <a class="nav-link" href="#team">Our Team <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-right active ">
+            <a class="nav-link pe-auto" data-toggle="modal" data-target="#exampleModal">Signup <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-right active ">
+            <a class="nav-link pe-auto" data-toggle="modal" data-target="#exampleModallog">Login <span class="sr-only">(current)</span></a>
+          </li>
 
+             
+      </ul>
+    </div>
+  </nav>
 
-        </nav>
-        <div>
-            <button class="btn btn-light" type="button" data-toggle="modal" data-target="#exampleModal">Signup</button>
+       <!-- <button class="btn btn-light" type="button" data-toggle="modal" data-target="#exampleModal">Signup</button>
 
-            <button class="btn btn-light" type="button" style="margin-left:10px;margin-right:30px;"
-                data-target="#exampleModallog" data-toggle="modal">Login</button>
-
-            <!-- <a href="/infl-dash.html">
-            <button class="btn btn-light" type="button" style="margin-left:10px;margin-right: 20px;;" 
-              data-bs-toggle="modal" >Influencer dashboard</button>
-              </a> 
-              <a href="/admin-dash">
-                <button class="btn btn-light" type="button" style="margin-left:10px" 
-                  data-bs-toggle="modal" >Admin dashboard</button>
-                  </a>  -->
-            <!-- <a href="/client-dash.html">
-                <button class="btn btn-light" type="button" style="margin-left:10px;margin-right:10px;"
-                    data-bs-toggle="modal">Client dash</button>
-            </a> -->
-        </div>
-    </nav>
-
-
+    <button class="btn btn-light" type="button" style="margin-left:10px;margin-right:30px;"
+        data-target="#exampleModallog" data-toggle="modal">Login</button> -->
 
     <!-- Carousel -->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -192,9 +191,9 @@
 
     <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
 
-        <div style="color:#B197FC;margin-left:50%">
+        <div style="color:#B197FC;margin-left:45%">
 
-            <h3>Our Services</h3>
+            <h3 id="service">Our Services</h3>
         </div>
     </nav>
 
@@ -291,34 +290,57 @@
 
         <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
 
-            <div style="color:#B197FC;margin-left: 50%;">
+            <div style="color:#B197FC;margin-left: 45%;">
 
-              <h3>Our Team</h3>
+              <h3 id="team">Our Team</h3>
             </div>
         </nav>
 
 
         <div style="width:inherit;height: 1px;background-color: #B197FC;"></div>
 
-        <div style="width:inherit;background-color:black;padding:30px;height:600px;">
+        <div style="width:inherit;background-color:black;padding:30px">
 
-            <div class="card " style="width:340px;float:left;margin-left: 180px;">
+            <!-- <div class="card " style="width:340px;float:left;margin-left: 180px;">
                 <img class="card-img-top" src="pics/dady.jpg" alt="Card image cap" height="330px">
                 <div class="card-body">
                     <h5 class="card-title">Under The guidance of</h5>
                     <p class="card-text">Rajesh Kumar Bansal <br> Author of Real Java</p>
 
                 </div>
-            </div>
+            </div> -->
+
+            <div class="row"style="margin-left:25%">
+                <div class="col-sm-4">
+                  <div class="card" >
+                    <img class="card-img-top" src="pics/daddyok.jpg" alt="Card image cap" >
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card" style="margin-left:5%">
+                    <img class="card-img-top" src="pics/mishaaa.jpg" width="400px" height="325px" alt="Card image cap" >
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
             <!------------------------------------------>
 
-            <div class="card " style="width: 340px;float:left;margin-left:120px;">
+            <!-- <div class="card " style="width: 340px;float:left;margin-left:120px;">
                 <img class="card-img-top" src="pics/mishaok.jpg" alt="Card image cap" height="330px">
                 <div class="card-body">
                     <h5 class="card-title">Developed By</h5>
                     <p class="card-text">Misha Bansal<br>Student</p>
 
-                </div>
+                </div> -->
             </div>
 
 
@@ -326,8 +348,9 @@
 
         </div>
 
+      
 
-
+        
 
         <!--------------------------------------------->
 
