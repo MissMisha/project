@@ -14,15 +14,15 @@ const nodemailer = require("nodemailer");
 //     dateStrings:true
 // }
 
-let config={
-    host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
-    user:"ukjzbpsazswmgigw",
-    password:"TAOd9fEbwTevak4Ptdab",
-    database:"bmlc6icip0yqey6mufco",
-    dateStrings:true,
-    keepAliveInitialDelay : 10000,
-    enableKeepAlive : true,
-}
+// let config={
+//     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
+//     user:"ukjzbpsazswmgigw",
+//     password:"TAOd9fEbwTevak4Ptdab",
+//     database:"bmlc6icip0yqey6mufco",
+//     dateStrings:true,
+//     keepAliveInitialDelay : 10000,
+//     enableKeepAlive : true,
+// }let config = process.env.DB_URL
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
