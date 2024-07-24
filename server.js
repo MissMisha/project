@@ -14,15 +14,17 @@ const nodemailer = require("nodemailer");
 //     dateStrings:true
 // }
 
-let config={
-    host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
-    user:"ukjzbpsazswmgigw",
-    password:"TAOd9fEbwTevak4Ptdab",
-    database:"bmlc6icip0yqey6mufco",
-    dateStrings:true,
-    keepAliveInitialDelay : 10000,
-    enableKeepAlive : true,
-}
+// let config={
+//     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
+//     user:"ukjzbpsazswmgigw",
+//     password:"TAOd9fEbwTevak4Ptdab",
+//     database:"bmlc6icip0yqey6mufco",
+//     dateStrings:true,
+//     keepAliveInitialDelay : 10000,
+//     enableKeepAlive : true,
+// }
+
+let config = "mysql://avnadmin:AVNS_hCVjANtKKH3GA2tg9yV@mysql-6fd586b-kunal261708-4b59.d.aivencloud.com:27972/defaultdb?ssl-mode=REQUIRED"
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
