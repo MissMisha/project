@@ -12,6 +12,11 @@
 --------------------------------------------------------------*/
 /* Fonts */
 
+::selection {
+  background:#B197FC;
+  color: #fff;
+}
+
 *{
   margin:0;
   padding:0;
