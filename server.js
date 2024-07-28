@@ -352,6 +352,7 @@ app.get("/update-pwd",function(req,resp)
 var mail;
 app.get("/send-mail",function(req,resp)
 {
+    console.log("done");
     console.log(req.query);
 
     let retPwd;
@@ -361,6 +362,7 @@ app.get("/send-mail",function(req,resp)
     {
         if(err==null)
         {
+            //console.log("ok");
             console.log(result[0].pwd);
             retPwd=result[0].pwd;
             let transporter = nodemailer.createTransport({
@@ -377,7 +379,7 @@ app.get("/send-mail",function(req,resp)
                 to: req.query.mail,
                 subject: 'Sending Email using Node.js',
                 //text: texxt2,
-                html: "Your Password"+" "+retPwd<br>"visit again"
+                html: "Your Password is"+" "+retPwd+"<br>Thanks for visiting Befluencer"
 
             };
             transporter.sendMail(mailOptions, function (error, info) {
