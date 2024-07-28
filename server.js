@@ -2,9 +2,8 @@ var express=require("express");
 let app= express();
 let mysql2=require("mysql2");
 let fileuploader=require("express-fileupload");
-const http = require("http");
 const nodemailer = require("nodemailer");
-var cloudinary=require("cloudinary");
+var cloudinary=require("cloudinary").v2;
 require('dotenv').config();
 
 
@@ -26,7 +25,7 @@ require('dotenv').config();
 //     enableKeepAlive : true,
 // }
 
-let config = "mysql://avnadmin:AVNS_hCVjANtKKH3GA2tg9yV@mysql-6fd586b-kunal261708-4b59.d.aivencloud.com:27972/defaultdb?ssl-mode=REQUIRED"
+let config = "mysql://avnadmin:AVNS_hCVjANtKKH3GA2tg9yV@mysql-6fd586b-kunal261708-4b59.d.aivencloud.com:27972/defaultdb"
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
@@ -48,9 +47,9 @@ app.listen(2024,function(req,resp){
 })
 
 cloudinary.config({
-    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
-    api_key:process.env.CLOUDINARY_API_KEY,
-    api_secret:process.env.CLOUDINARY_API_SECRET
+    cloud_name:"db1mdqzks",
+    api_key:"453759612391945",
+    api_secret:"rM7CNsTpQdh4R8ODPJp7urHJJuI"
 });
 
 app.get("/",function(req,resp){
@@ -120,20 +119,30 @@ app.get("/login-process",function(req,resp)
     resp.sendFile(path);
    })
 
-   app.post("/save-infl-profile",function(req,resp)
+   app.post("/save-infl-profile", async function(req,resp)
     {
-    //console.log("helo");
-    console.log(req.body);
 
-    let fileName="";
-    if(ppic!=null){
-        try{
-            let result= awaitcloudinary.uploader.upload(ppic.tempFilePAth);
-            filename=result.secure_url;
-        } catch (error){
-            return resp.send(error.message);
-        }
+
+    let filetosave="";
+
+    if(req.files != null)
+    {
+
+        var filename = req.files.ppic.name;
+        var path = __dirname + "/public/uploads/" + filename;
+
+        req.files.ppic.mv(path)
+
+        await cloudinary.uploader.upload(path)
+        .then(function(result){
+
+            filetosave = result.url;
+
+        })
+
     }
+
+    
        
 
     let iEmail=req.body.iEmail;
@@ -159,12 +168,12 @@ app.get("/login-process",function(req,resp)
         {
             str+=ary[i]+",";
         }
-    console.log(str);
+    // console.log(str);
         }
         else
         str=ary;
 
-    mysql.query("insert into iprofile values(?,?,?,?,?,?,?,?,?,?,?,?)",[iEmail,iName,iSelGen,iSelDate,iAddress,iCity,iCont,str,insta,yt,txtArea,fileName],function(err)
+    mysql.query("insert into iprofile values(?,?,?,?,?,?,?,?,?,?,?,?)",[iEmail,iName,iSelGen,iSelDate,iAddress,iCity,iCont,str,insta,yt,txtArea,filetosave],function(err)
     {
         if(err==null)
             {
