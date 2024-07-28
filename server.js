@@ -259,23 +259,37 @@ app.get("/srch-infl-profile",function(req,resp)
     })
 
 })
-app.post("/update-infl-profile",function(req,resp)
+
+app.post("/update-infl-profile", async function(req,resp)
 {
-    console.log(req.body);
+    //console.log(req.body);
     console.log(req.files);
 
-    let fileName="";
-    if(req.files!=null)
-        {
-             fileName=req.files.ppic.name;
-            let path=__dirname+"/public/uploads/"+fileName;
-            req.files.ppic.mv(path);
-            
-        }
-        else
-        {
-            fileName=req.body.hdn;
-        }
+    let filetosave="";
+
+    if(req.files != null)
+    {
+
+        var filename = req.files.ppic.name;
+        var path = __dirname + "/public/uploads/" + filename;
+
+        req.files.ppic.mv(path)
+
+        await cloudinary.uploader.upload(path)
+        .then(function(result){
+
+            filetosave = result.url;
+
+        })
+
+    }  
+     else
+     {
+        filetosave=req.body.hdn;
+        console.log("else");
+        console.log(req.body.hdn);
+     }
+  
        
         let iEmail=req.body.iEmail;
        
@@ -292,7 +306,7 @@ app.post("/update-infl-profile",function(req,resp)
         
 
 
-mysql.query("update iprofile set iName=? , gender=?,dob=?,address=?,city=?,contact=?,field=?,insta=?,yt=?,other=? ,picpath=? where email=?",[iName,iSelGen,iSelDate,iAddress,iCity,iCont,selFld,insta,yt,txtArea,fileName,iEmail],function(err,result)
+mysql.query("update iprofile set iName=? , gender=?,dob=?,address=?,city=?,contact=?,field=?,insta=?,yt=?,other=? ,picpath=? where email=?",[iName,iSelGen,iSelDate,iAddress,iCity,iCont,selFld,insta,yt,txtArea,filetosave,iEmail],function(err,result)
 {
     if(err==null)//no error
     {
