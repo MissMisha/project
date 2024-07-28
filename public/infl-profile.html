@@ -61,6 +61,9 @@
                        
                         
                         $("#prev").prop("src",jsonAry[0].picpath);
+                        $("#hdn").val(jsonAry[0].picpath);
+
+                        //alert($("#hdn").val());
                         
 
                     }).fail(function(err)
@@ -119,7 +122,7 @@
             </div>
         <!-- ---------------------------- -->
         <form class="row g-3" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="hdn" id="hdn">
+          <input type="hidden" name="hdn" id="hdn" onchange="doPrev(this,prev)">
             <div class="col-md-4">
               <label for="inputEmail4" class="form-label">Email</label>
               <input type="email" class="form-control" id="iEmail" name="iEmail" required>
@@ -204,7 +207,7 @@
             
             <div class="col-12">
               <button type="submit" id="save" class="btn btn-dark" formaction="/save-infl-profile">Save</button>
-              <button type="submit" id="updt" class="btn btn-dark" formaction="/update-infl-profile">Update</button>
+              <button type="submit" id="updt" class="btn btn-dark" formaction="/update-infl-profile" >Update</button>
             </div>
             <div>
               <span id="saved"></span>
