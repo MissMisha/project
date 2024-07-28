@@ -377,7 +377,7 @@ app.get("/send-mail",function(req,resp)
             var mailOptions = {
                 from: 'mishabansal26@gmail.com',
                 to: req.query.mail,
-                subject: 'Sending Email using Node.js',
+                subject: 'Forgot Password',
                 //text: texxt2,
                 html: "Your Password is"+" "+retPwd+"<br>Thanks for visiting Befluencer"
 
