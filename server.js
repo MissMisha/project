@@ -4,6 +4,8 @@ let mysql2=require("mysql2");
 let fileuploader=require("express-fileupload");
 const http = require("http");
 const nodemailer = require("nodemailer");
+var cloudinary=require("cloudinary");
+require('dotenv').config();
 
 
 // let config={
@@ -44,6 +46,12 @@ mysql.connect(function(err){
 app.listen(2024,function(req,resp){
     console.log("Your server started 😊");
 })
+
+cloudinary.config({
+    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_secret:process.env.CLOUDINARY_API_SECRET
+});
 
 app.get("/",function(req,resp){
     let path=__dirname+"/public/index.html";
@@ -118,14 +126,15 @@ app.get("/login-process",function(req,resp)
     console.log(req.body);
 
     let fileName="";
-    if(req.files!=null)
-        {
-             fileName=req.files.ppic.name;
-            let path=__dirname+"/public/uploads/"+fileName;
-            req.files.ppic.mv(path);
+    if(ppic!=null){
+        try{
+            let result= awaitcloudinary.uploader.upload(ppic.tempFilePAth);
+            filename=result.secure_url;
+        } catch (error){
+            return resp.send(error.message);
         }
-        else
-        fileName="nopic.jpg";
+    }
+       
 
     let iEmail=req.body.iEmail;
    
