@@ -6,7 +6,6 @@ const nodemailer = require("nodemailer");
 var cloudinary=require("cloudinary").v2;
 require('dotenv').config();
 
-
 // let config={
 //     host:"127.0.0.1",
 //     user:"root",
@@ -15,15 +14,7 @@ require('dotenv').config();
 //     dateStrings:true
 // }
 
-// let config={
-//     host:"bmlc6icip0yqey6mufco-mysql.services.clever-cloud.com",
-//     user:"ukjzbpsazswmgigw",
-//     password:"TAOd9fEbwTevak4Ptdab",
-//     database:"bmlc6icip0yqey6mufco",
-//     dateStrings:true,
-//     keepAliveInitialDelay : 10000,
-//     enableKeepAlive : true,
-// }let config = process.env.DB_URL
+let config = process.env.DB_URL
 
 app.use(express.urlencoded("true"));
 app.use(fileuploader());
@@ -45,9 +36,9 @@ app.listen(2024,function(req,resp){
 })
 
 cloudinary.config({
-    cloud_name:"db1mdqzks",
-    api_key:"453759612391945",
-    api_secret:"rM7CNsTpQdh4R8ODPJp7urHJJuI"
+    cloud_name : process.env.CLOUDINARY_CLOUD_NAME,
+    api_key : process.env.CLOUDINARY_API_KEY,
+    api_secret : process.env.CLOUDINARY_API_SECRET
 });
 
 app.get("/",function(req,resp){
@@ -519,7 +510,7 @@ app.get("/show-some-cities",function(req,resp){
     console.log(req.query.field);
     mysql.query("select distinct city from iprofile where field like ?",["%"+req.query.field+"%"],function(err,jsonsomecityArray)
     {
-        console.log(jsonsomecityArray);
+        // console.log(jsonsomecityArray);
         if(err)
         {
             console.log(err.message)
@@ -536,7 +527,7 @@ app.get("/show-some-cities",function(req,resp){
 
 app.get("/find-details",function(req,resp)
 {
-    console.log("API");
+    // console.log("API");
   
     mysql.query("select * from iprofile where field like ? && city like ?",["%"+req.query.field+"%", "%"+req.query.city+"%"],function(err,jsonDetailsAry){
         if(err)
@@ -551,7 +542,7 @@ app.get("/find-details",function(req,resp)
 
 app.get("/find-by-name",function(req,resp)
 {
-    console.log("API");
+    // console.log("API");
   
     mysql.query("select * from iprofile where iname like ? ",["%"+req.query.iname+"%"],function(err,jsonDetailsAry){
         if(err)
@@ -566,7 +557,7 @@ app.get("/find-by-name",function(req,resp)
 
 app.get("/save-cprofile",function(req,resp){
 
-    console.log("API");
+    // console.log("API");
 
     mysql.query("insert into cprofile(?,?,?,?,?,?)",[req.query.cEmail,req.query.cName,req.query.selState,req.query.cityC,req.query.type,req.query.contactC],function(err,result)
     {
@@ -579,14 +570,3 @@ app.get("/save-cprofile",function(req,resp){
     console.log("Signed up successfully");
     })
 })
-
-
-
-
-
-
-
-
-
-
-
