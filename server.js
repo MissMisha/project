@@ -6,14 +6,6 @@ const nodemailer = require("nodemailer");
 var cloudinary=require("cloudinary").v2;
 require('dotenv').config();
 
-// let config={
-//     host:"127.0.0.1",
-//     user:"root",
-//     password:"Admin123",
-//     database:"project",
-//     dateStrings:true
-// }
-
 let config = process.env.DB_URL
 
 app.use(express.urlencoded("true"));

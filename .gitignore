@@ -3,3 +3,5 @@ package-lock.json
 public/pics/neongif.mov
 project.git
 .env
+.env.*
+!.env.example
