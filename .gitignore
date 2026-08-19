@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+public/pics/neongif.mov
+.env
+project.git
